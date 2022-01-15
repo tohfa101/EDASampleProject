@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<h2 class="text-center" id="heading1">
+    Welcome to ASP.NET Practice Test. Below are the requirements this webapplication must achieve.
+    <a href="@Url.Action("About", "Staff")" class="btn btn-default text-white" id="details">About US</a>
+</h2>
+<div class="form-actions no-color" style="margin: 10px 0px">
+    <a class="btn btn-info" href="@Url.Action("Index", "Staff")" data-original-title="Index" data-placement="top">Go To Application</a>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-6 mb-6">
+        <div class="card-header" style="background-color: darkcyan"> Asp.Net MVC 5 </div>
+        <div class="card-body">
+            <div>
+                <h3 id="interest">Create sample project with Asp.Net MVC 5 </h3>
+                <p>Create A Staff Management System with MVC 5</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-6">
+        <div class="card-header" style="background-color: darkcyan"> List All Staff </div>
+        <div class="card-body">
+            <div>
+                <h3 id="interest">Create a page with List of all staff </h3>
+                <p>A page with list of all staff</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-6">
+        <div class="card-header" style="background-color: darkcyan"> CRUD Operations </div>
+        <div class="card-body">
+            <div>
+                <h3 id="interest">Create a page for each CRUD Operation </h3>
+                <p>Creat Pages for Create, Read, Update and Delete.
+                Also Handle them with Ajax</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 mb-6">
+        <div class="card-header" style="background-color: darkcyan"> Validationss </div>
+        <div class="card-body">
+            <div>
+                <h3 id="interest">Calidations For Each Field </h3>
+                <p>
+                    Staff must have validation like required, valid email or not and there should be at least one image upload for staff image.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

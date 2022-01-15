@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EDASampleProject.Models.staff01office_info>
+
+@{
+    ViewBag.Title = "Viewall";
+    Layout = null;
+}
+
+<h2>View All Staff</h2>
+
+<table class="table table-bordered table-striped table-sm" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01depart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01salary)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.staff01name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staff01position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staff01depart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staff01salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditStaff", new { id=item.staff01uin }) |
+            @Html.ActionLink("Details", "Details", new { id=item.staff01uin }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.staff01uin })
+        </td>
+    </tr>
+}
+
+</table>

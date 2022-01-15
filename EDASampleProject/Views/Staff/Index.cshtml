@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<nav style="margin: 10px 0px;" class="visually-hidden">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-viewall-tab" data-bs-toggle="tab" data-bs-target="#navviewall" type="button" role="tab" aria-controls="nav-viewall" aria-selected="true">View All</button>
+        <button class="nav-link" id="nav-add-tab" data-bs-toggle="tab" data-bs-target="#navadd" type="button" role="tab" aria-controls="nav-add" aria-selected="false">Add New</button>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="navviewall" role="tabpanel" aria-labelledby="nav-viewall-tab">
+        @Html.Action("Viewall")
+    </div>
+    <div class="tab-pane fade" id="navadd" role="tabpanel" aria-labelledby="nav-add-tab">
+    </div>
+</div>
+<script src="~/Scripts/notify.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#employeeTable").DataTable();
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+
+    </script>
+}
+

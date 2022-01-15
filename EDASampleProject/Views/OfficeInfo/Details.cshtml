@@ -1,0 +1,58 @@
+﻿@model EDASampleProject.Models.staff01office_info
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>staff01office_info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.staff01name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff01name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.staff01position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff01position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.staff01depart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff01depart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.staff01salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff01salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.staff01image_path)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff01image_path)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.staff01uin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

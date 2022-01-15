@@ -1,0 +1,77 @@
+﻿@model EDASampleProject.Models.staff01office_info
+
+@{
+    ViewBag.Title = "Delete";
+}
+<script src="~/Scripts/notify.min.js"></script>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <div class="row">
+        @*<hr />*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.staff01image_path)
+        @Html.HiddenFor(model => model.staff01uin)
+
+        <div class="col">
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.staff01name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01position, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.staff01position, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01depart, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.staff01depart, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.staff01email, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01salary, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.staff01salary, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                @Html.LabelFor(model => model.staff01image_path, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    <img src="@Url.Content(Model.staff01image_path)" style="margin:10px" height="200" width="200" id="imagePreview" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin: 10px 0px">
+            <a class="btn  btn-lg btn-info" href="@Url.Action("Index", "Staff")" data-original-title="Index" data-placement="top"><i class="fa fa-angle-left"></i> Back</a>
+            <a class="btn btn-sm btn-danger">
+                <i class="fa fa-trash fa fa-white"></i>
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </a>
+            
+        </div>
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EDASampleProject.Models.staff01office_info>
+
+@{
+    ViewBag.Title = "Viewall";
+    //Layout = null;
+}
+<script src="~/Scripts/notify.min.js"></script>
+
+<h2>View All Staff</h2>
+<div>
+    <a class="btn btn-xs  btn-light-blue tooltips" href="@Url.Action("AddStaff", "Staff")" data-original-title="Edit" data-placement="top"><i class="fa fa-plus"></i> Add New</a>
+</div>
+<table class="table table-bordered table-striped table-sm">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01depart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff01salary)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.staff01name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staff01position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staff01depart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staff01email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staff01salary)
+            </td>
+            <td>
+                <a class="btn btn-xs  btn-primary" href="@Url.Action("EditStaff", "Staff", new { id = item.staff01uin })" data-original-title="Edit" data-placement="top"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-xs  btn-info" href="@Url.Action("Details", "Staff", new { id = item.staff01uin })" data-original-title="View" data-placement="top"><i class="fa fa-eye"></i></a>
+                <a class="btn btn-xs  btn-danger" href="@Url.Action("Delete", "Staff", new { id = item.staff01uin })" data-original-title="Remove" data-placement="top"><i class="fa fa-trash fa fa-white"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
